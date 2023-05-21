@@ -13,7 +13,7 @@ public class HelloApplication extends Application {
     public void start(Stage stage) throws IOException {
         MenuPrincipal root = new MenuPrincipal();
         Scene scene = new Scene(root, 500, 500);
-        stage.setTitle("Veterinaria");
+        stage.setTitle("Registro de citas animalia");
         stage.setScene(scene);
         stage.show();
     }
