@@ -2,19 +2,20 @@ package com.example.proyectoveterinaria.Vistas;
 
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
 
 import java.net.URL;
 
 public class VentanaLogin extends BorderPane {
+    private Stage stage; //variable para usarla como parametro en el constructor
     //Componentes
     URL urllogo;
     Label iniciosesion;
@@ -22,15 +23,17 @@ public class VentanaLogin extends BorderPane {
     Label contrasena;
     PasswordField pswcontrasena;
     Button btnlogin;
-    public VentanaLogin(){
+    public VentanaLogin(Stage stage){ //constructo con Stage como parametro para poder cambiarlo en un evento
+        this.stage = stage;
         InicializarComponentes();
     }
+
 
     public void InicializarComponentes(){
         //Logo
         urllogo = this.getClass().getResource("ANIMALIA.png");
-        Image imagelogo = new Image(urllogo.toString());
-        ImageView imageViewlogo = new ImageView(imagelogo);
+        //Image imagelogo = new Image(urllogo.toString());
+        //ImageView imageViewlogo = new ImageView(imagelogo);
 
         VBox opclogin = new VBox();
         HBox ContLogo = new HBox();
@@ -56,13 +59,19 @@ public class VentanaLogin extends BorderPane {
         opclogin.getChildren().addAll(iniciosesion, txfiniciosesion, contrasena, pswcontrasena, btnlogin);
         opclogin.setAlignment(Pos.CENTER);
         opclogin.setSpacing(8);
-        ContLogo.getChildren().addAll(imageViewlogo);
+        ContLogo.getChildren().addAll();
         ContLogo.setAlignment(Pos.TOP_CENTER);
         setTop(ContLogo);
-        imageViewlogo.setLayoutX(250);
         setCenter(opclogin);
         setMargin(ContLogo, new Insets(10, 10, 0, 10));
         setMargin(opclogin, new Insets(10, 10, 0, 10));
+
+        //evento cambio de ventana
+        btnlogin.setOnAction(e ->{
+            VentanaRegistroCita ventanaRegistroCita = new VentanaRegistroCita(); //Nueva clase ventanaregistro
+            Scene escena2 = new Scene(ventanaRegistroCita); //nueva escena para cambiarla cuando ocurra el evento
+            stage.setScene(escena2); //se establece la nueva escena en el stage
+        });
 
     }
 }
