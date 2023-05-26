@@ -22,6 +22,9 @@ public class VentanaLogin extends BorderPane {
     Label contrasena;
     PasswordField pswcontrasena;
     Button btnlogin;
+    public VentanaLogin(){
+        InicializarComponentes();
+    }
 
     public void InicializarComponentes(){
         //Logo

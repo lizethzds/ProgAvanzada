@@ -1,6 +1,7 @@
 package com.example.proyectoveterinaria;
 
 import com.example.proyectoveterinaria.Vistas.MenuPrincipal;
+import com.example.proyectoveterinaria.Vistas.VentanaLogin;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -11,8 +12,8 @@ import java.io.IOException;
 public class HelloApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        MenuPrincipal root = new MenuPrincipal();
-        Scene scene = new Scene(root, 500, 500);
+        VentanaLogin root = new VentanaLogin();
+        Scene scene = new Scene(root, 500, 700);
         stage.setTitle("Registro de citas animalia");
         stage.setScene(scene);
         stage.show();
