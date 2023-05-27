@@ -69,7 +69,7 @@ public class VentanaLogin extends BorderPane {
         //evento cambio de ventana
         btnlogin.setOnAction(e ->{
             String nombreUsuario = txfiniciosesion.getText();
-            VentanaRegistroCita ventanaRegistroCita = new VentanaRegistroCita(nombreUsuario); //Nueva clase ventanaregistro
+            VentanaRegistroCita ventanaRegistroCita = new VentanaRegistroCita(nombreUsuario, stage); //Nueva clase ventanaregistro
             Scene escena2 = new Scene(ventanaRegistroCita, 550, 700); //nueva escena para cambiarla cuando ocurra el evento
             stage.setScene(escena2); //se establece la nueva escena en el stage
         });
