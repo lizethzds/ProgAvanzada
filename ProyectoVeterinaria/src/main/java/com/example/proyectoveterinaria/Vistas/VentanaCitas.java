@@ -1,5 +1,7 @@
 package com.example.proyectoveterinaria.Vistas;
 
+import javafx.geometry.Pos;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
@@ -9,7 +11,7 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 public class VentanaCitas extends BorderPane {
-    Stage stageVentanaCitas;
+    private Stage stageVentanaCitas;
     //Elementos
     TextField txfbuscador;
     Button btnbuscador;
@@ -56,11 +58,24 @@ public class VentanaCitas extends BorderPane {
         //Agregar los componentes a los contenedores
         hBoxBuscador.getChildren().addAll(txfbuscador, btnbuscador);
         setTop(hBoxBuscador);
+        hBoxBuscador.setSpacing(6);
+        hBoxBuscador.setPrefHeight(50);
+        hBoxBuscador.setPrefWidth(550);
 
         vBoxOpcionescliente.getChildren().addAll(btnagregar,btneditar, btneiliminar);
         setRight(vBoxOpcionescliente);
+        vBoxOpcionescliente.setAlignment(Pos.TOP_CENTER);
+        vBoxOpcionescliente.setSpacing(5);
+        vBoxOpcionescliente.setPrefWidth(75);
+        vBoxOpcionescliente.setMaxHeight(325);
 
         setCenter(tbvcitas);
 
+        //Evento para volver a la ventana de agregar
+        btnagregar.setOnAction(evt ->{
+            VentanaRegistroCita ventanaRegistroCita = new VentanaRegistroCita();
+            Scene sceneventanaregistrocita = new Scene(ventanaRegistroCita,600, 500);
+            stageVentanaCitas.setScene(sceneventanaregistrocita);
+        });
     }
 }

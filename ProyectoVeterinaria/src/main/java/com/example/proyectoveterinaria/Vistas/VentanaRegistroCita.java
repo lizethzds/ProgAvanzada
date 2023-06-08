@@ -12,6 +12,7 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 public class VentanaRegistroCita extends BorderPane {
+    Stage stageVentaCitas;
     private Stage stageVentanaRcita;
     //Variable del nombre del usuario
     String nombreUsuario;
@@ -29,6 +30,7 @@ public class VentanaRegistroCita extends BorderPane {
     Button btnvisualizarcitas;
 
     public VentanaRegistroCita() { //Constructor por defecto
+        //this.stageVentanaRcita = stageVentanaRcita;
         InciarComponentes();
     }
 
@@ -99,7 +101,8 @@ public class VentanaRegistroCita extends BorderPane {
         btnvisualizarcitas = new Button("Visualizar todas las citas");
         btnvisualizarcitas.setStyle("-fx-background-color: black; -fx-text-fill: white; -fx-background-radius: 5;");
         btnvisualizarcitas.setOnAction(e ->{
-            VentanaCitas ventanaCitas = new VentanaCitas();
+
+            VentanaCitas ventanaCitas = new VentanaCitas(stageVentaCitas);
             Scene sceneventanacitas = new Scene(ventanaCitas, 600, 500);
             stageVentanaRcita.setScene(sceneventanacitas);
         });
