@@ -21,14 +21,14 @@ public class MenuPrincipal extends BorderPane {
     private void inicializarComponentes() {
 
         Button btnCitas = new Button("Citas");
-        Button btnPacientes = new Button("Pacientes ");
+        Button btnDuenos = new Button("Pacientes ");
         Button btnVeterinarios = new Button("Veterinarios");
+        Button btnMascotas = new Button("Mascotas");
         Label lbTitulo = new Label("Seleccione una opción");
 
         lbTitulo.setAlignment(Pos.CENTER);
 
         TilePane panelBotones = new TilePane();
-
 
         panelBotones.setHgap(3);
         panelBotones.setPrefColumns(4);
@@ -40,12 +40,6 @@ public class MenuPrincipal extends BorderPane {
 
         this.setCenter(panelBotones);
         this.setTop(lbTitulo);
-
-
-
-
-
-
 
 
     }
