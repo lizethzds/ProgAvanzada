@@ -13,8 +13,12 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 import java.net.URL;
+import java.util.HashMap;
+import java.util.Map;
 
 public class VentanaLogin extends BorderPane {
+    //Contraseñas y usernames
+    private Map<String, String> usuarios;
     private Stage stage; //variable para usarla como parametro en el constructor
     //Componentes
     URL urllogo;
@@ -26,6 +30,10 @@ public class VentanaLogin extends BorderPane {
     public VentanaLogin(Stage stage){ //constructo con Stage como parametro para poder cambiarlo en un evento
         this.stage = stage;
         InicializarComponentes();
+        this.usuarios = new HashMap<>();
+        usuarios.put("Maria Hernandez", "Mah23");
+        usuarios.put("Luis Enrique Ochoa", "Lochoa79");
+        usuarios.put("William Mora","Wmora13");
     }
 
 
